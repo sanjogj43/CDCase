@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CDCase_Classes">
+  <DataContextMoniker Name="/CDCase_ClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="06bb4dc6-5ac4-4bab-be71-d4960995d8a4" absoluteBounds="3.5, 1, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/CDCase_ClassesDataContext/CD_tbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="885a4155-7254-49d2-b9d9-7c2a9c1bf06b" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="71f50507-d3f9-4ec3-b511-04848787220a" absoluteBounds="0.75, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/CDCase_ClassesDataContext/Label_tbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="406c8bd4-324f-4779-aeae-2a0bbb225c9a" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="73fb84c1-c6a5-43d3-8718-f31494a5be32" absoluteBounds="6.25, 1, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/CDCase_ClassesDataContext/Track_tbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d246729-d397-48ea-a38d-0ad80f1a9d4a" absoluteBounds="6.265, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.88544840494792); (3.5 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CDCase_ClassesDataContext/Label_tbl/Label_tbl_CD_tbl" />
+      <nodes>
+        <classShapeMoniker Id="71f50507-d3f9-4ec3-b511-04848787220a" />
+        <classShapeMoniker Id="06bb4dc6-5ac4-4bab-be71-d4960995d8a4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.88544840494792); (6.25 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CDCase_ClassesDataContext/CD_tbl/CD_tbl_Track_tbl" />
+      <nodes>
+        <classShapeMoniker Id="06bb4dc6-5ac4-4bab-be71-d4960995d8a4" />
+        <classShapeMoniker Id="73fb84c1-c6a5-43d3-8718-f31494a5be32" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

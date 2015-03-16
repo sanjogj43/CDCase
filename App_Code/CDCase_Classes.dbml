@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CD_CASE" Class="CDCase_ClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SANJOG;Initial Catalog=CD_CASE;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CD_CASEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CD_tbl" Member="CD_tbls">
+    <Type Name="CD_tbl">
+      <Column Name="cd_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cdlbl_id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cd_title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cd_year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lbl_title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="CD_tbl_Track_tbl" Member="Track_tbls" ThisKey="cd_id" OtherKey="cd_id" Type="Track_tbl" />
+      <Association Name="Label_tbl_CD_tbl" Member="Label_tbl" ThisKey="lbl_title" OtherKey="lbl_title" Type="Label_tbl" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Label_tbl" Member="Label_tbls">
+    <Type Name="Label_tbl">
+      <Column Name="lbl_title" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lbl_street" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lbl_city" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lbl_stat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="lbl_postcode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lbl_nation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Label_tbl_CD_tbl" Member="CD_tbls" ThisKey="lbl_title" OtherKey="lbl_title" Type="CD_tbl" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Track_tbl" Member="Track_tbls">
+    <Type Name="Track_tbl" Id="ID1">
+      <Column Name="trk_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="trk_num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trk_title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="trk_length" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="cd_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CD_tbl_Track_tbl" Member="CD_tbl" ThisKey="cd_id" OtherKey="cd_id" Type="CD_tbl" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Function Name="dbo.getdata" Method="getdata">
+    <ElementType IdRef="ID1" />
+  </Function>
+</Database>
